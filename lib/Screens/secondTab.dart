@@ -51,7 +51,6 @@ class _SecondTabState extends State<SecondTab> {
             padding: EdgeInsets.all(30),
             child: QRBarScannerCamera(
               onError: (context, error) => Text(
-                // error.toString(),
                 "Sorry You dont have Camera Access!",
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.red),
