@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 4)).then((value) => {
+    Future.delayed(Duration(seconds: 5)).then((value) => {
        Navigator.of(context).pushReplacement(
         CupertinoPageRoute(builder: (ctx) => Homepage()))
     });
@@ -52,8 +52,11 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(height: 20),
             SpinKitDancingSquare(
               color: Colors.deepOrange,
-              size: 100,
-            )
+              size: 200,
+            ),
+            Text("Developed By Tilan Neelaruwan",style: TextStyle(
+              color: Colors.black,fontWeight: FontWeight.w900,fontSize: 12
+            ),)
           ],
         ),
       ),

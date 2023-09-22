@@ -47,15 +47,19 @@ class _SecondTabState extends State<SecondTab> {
         child: SizedBox(
           height: 1500,
           width: 600,
-          child: QRBarScannerCamera(
-            onError: (context, error) => Text(
-              error.toString(),
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.red),
-            ),
-            qrCodeCallback: (code){
-              qrCallback(code);
-            }),
+          child: Padding(
+            padding: EdgeInsets.all(30),
+            child: QRBarScannerCamera(
+              onError: (context, error) => Text(
+                // error.toString(),
+                "Sorry You dont have Camera Access!",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.red),
+              ),
+              qrCodeCallback: (code){
+                qrCallback(code);
+              }),
+          ),
         ),
       )
       : Center(

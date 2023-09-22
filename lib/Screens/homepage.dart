@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scanme/Components/colors.dart';
 import 'package:scanme/Screens/firstTab.dart';
+import 'package:scanme/Screens/profile.dart';
 import 'package:scanme/Screens/secondTab.dart';
 
 class Homepage extends StatefulWidget {
@@ -44,6 +45,8 @@ class _HomepageState extends State<Homepage> {
   }
   @override
   Widget build(BuildContext context) {
+
+
     return  WillPopScope(
       onWillPop: (() => _onWillPop(context)),
       child: DefaultTabController(
@@ -62,7 +65,26 @@ class _HomepageState extends State<Homepage> {
             ),
           ],
           ),
-          title: Center(child: Text("QR GENERATOR/SCANNER",style: TextStyle(fontWeight: FontWeight.w900,color: Colors.black),)),
+          title: Center(
+            child:
+             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                   children: [
+                     Text("QR GENERATOR/SCANNER",style: TextStyle(fontWeight: FontWeight.w900,color: Colors.black)),
+                     SizedBox(width: 20,),
+                     InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=> Profile()));
+                      },
+                       child: CircleAvatar(
+                               backgroundColor: Colors.grey.shade800,
+                               backgroundImage: AssetImage("lib/Assets/Images/Tilan.jpg"),
+                             ),
+                     )
+                   ],
+                 ),
+               ),
           ),
           body: TabBarView(
             children: [

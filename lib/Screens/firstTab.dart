@@ -25,10 +25,10 @@ class _FirstTabState extends State<FirstTab> {
                Padding(padding: EdgeInsets.all(35),
               child: Container( 
                 width: double.infinity,
-                height: 200,
+                height: 400,
                 decoration: BoxDecoration(
                   image: DecorationImage(image: AssetImage("lib/Assets/Images/background.jpg"),
-                  fit: BoxFit.cover)
+                  fit: BoxFit.contain)
                 )
               ),),
               Padding(padding: EdgeInsets.only(right: 35,left: 35,bottom: 35),
